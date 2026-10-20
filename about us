@@ -1,1 +1,668 @@
-<a href="about.html">ABOUT US</a>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About Us | PRS Gaming</title>
+  <meta name="description" content="Discover the story of PRS Gaming — Power Rage Success. Founded in 2013, built through competition, and back in 2026. #PRSTAKEOVER">
+  <meta name="theme-color" content="#090909">
+
+  <style>
+    :root {
+      --bg: #090909;
+      --panel: #121212;
+      --red: #e50920;
+      --red-dark: #a90718;
+      --white: #ffffff;
+      --muted: #a5a5a5;
+      --border: #292929;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 8%;
+      background: rgba(9, 9, 9, 0.95);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    .logo {
+      font-size: 1.7rem;
+      font-weight: 900;
+      letter-spacing: 3px;
+    }
+
+    .logo span {
+      color: var(--red);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .nav-links a:hover {
+      color: var(--red);
+    }
+
+    .hero {
+      min-height: 590px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 8%;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at center, #321016 0%, #16090b 35%, #090909 75%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .eyebrow {
+      color: var(--red);
+      font-size: 0.85rem;
+      font-weight: 900;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 20px 0 8px;
+      font-size: clamp(4rem, 12vw, 8rem);
+      font-weight: 1000;
+      line-height: 0.95;
+      letter-spacing: -4px;
+    }
+
+    .hero h1 span {
+      color: var(--red);
+    }
+
+    .hero h2 {
+      margin-top: 24px;
+      font-size: clamp(1rem, 3vw, 1.6rem);
+      letter-spacing: 5px;
+      text-transform: uppercase;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 24px auto 32px;
+      color: #c5c5c5;
+      font-size: 1.05rem;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 28px;
+      background: var(--red);
+      color: white;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: 0.2s ease;
+    }
+
+    .button:hover {
+      background: var(--red-dark);
+      transform: translateY(-2px);
+    }
+
+    .button-outline {
+      margin-left: 10px;
+      background: transparent;
+      border: 1px solid #555;
+    }
+
+    .button-outline:hover {
+      background: #202020;
+    }
+
+    .section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 90px 28px;
+    }
+
+    .section-heading {
+      margin-bottom: 35px;
+    }
+
+    .section-heading .eyebrow {
+      letter-spacing: 3px;
+    }
+
+    .section-heading h2 {
+      margin-top: 8px;
+      font-size: clamp(2rem, 5vw, 3.3rem);
+      line-height: 1.15;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 span {
+      color: var(--red);
+    }
+
+    .intro {
+      max-width: 850px;
+      color: #c4c4c4;
+      font-size: 1.08rem;
+    }
+
+    .intro strong {
+      color: white;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: #0e0e0e;
+    }
+
+    .stat {
+      padding: 35px 15px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+
+    .stat:last-child {
+      border-right: none;
+    }
+
+    .stat h3 {
+      color: var(--red);
+      font-size: 2.5rem;
+      font-weight: 900;
+    }
+
+    .stat p {
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .timeline {
+      position: relative;
+      margin-top: 40px;
+      padding-left: 32px;
+      border-left: 2px solid #3b171c;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 38px;
+      padding: 28px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      top: 32px;
+      left: -40px;
+      width: 14px;
+      height: 14px;
+      background: var(--red);
+      border: 3px solid var(--bg);
+      border-radius: 50%;
+    }
+
+    .year {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: var(--red);
+      font-size: 0.9rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .timeline-item h3 {
+      margin-bottom: 10px;
+      font-size: 1.35rem;
+      text-transform: uppercase;
+    }
+
+    .timeline-item p {
+      color: #b9b9b9;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 35px;
+    }
+
+    .card {
+      padding: 30px;
+      background: linear-gradient(145deg, #171717, #0d0d0d);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--red);
+      border-radius: 4px;
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      font-size: 1.25rem;
+      text-transform: uppercase;
+    }
+
+    .card p {
+      color: #b9b9b9;
+    }
+
+    .relaunch {
+      padding: 100px 25px;
+      text-align: center;
+      background: linear-gradient(135deg, #25090d, #0c0c0c 65%);
+      border-top: 1px solid #44151c;
+      border-bottom: 1px solid #44151c;
+    }
+
+    .relaunch h2 {
+      margin: 15px 0;
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      font-weight: 1000;
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+
+    .relaunch h2 span {
+      color: var(--red);
+    }
+
+    .relaunch p {
+      max-width: 650px;
+      margin: 0 auto 28px;
+      color: #c4c4c4;
+    }
+
+    .slogan {
+      margin-top: 30px;
+      font-size: 1rem;
+      font-weight: 900;
+      letter-spacing: 4px;
+    }
+
+    .slogan span {
+      color: var(--red);
+    }
+
+    footer {
+      padding: 35px 20px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    footer .hashtag {
+      display: block;
+      margin-top: 8px;
+      color: var(--red);
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    @media (max-width: 700px) {
+      .navbar {
+        flex-direction: column;
+        padding: 18px;
+      }
+
+      .nav-links {
+        justify-content: center;
+        gap: 14px;
+        font-size: 0.75rem;
+      }
+
+      .hero {
+        min-height: 500px;
+        padding: 75px 20px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero h2 {
+        letter-spacing: 2px;
+      }
+
+      .button {
+        margin: 5px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .stat {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .stat:last-child {
+        border-bottom: none;
+      }
+
+      .section {
+        padding: 65px 20px;
+      }
+
+      .timeline {
+        padding-left: 23px;
+      }
+
+      .timeline-item {
+        padding: 22px;
+      }
+
+      .timeline-item::before {
+        left: -31px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="navbar">
+    <a href="#home" class="logo">PRS<span>.</span> GAMING</a>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#story">Our Story</a>
+      <a href="#legacy">Our Legacy</a>
+      <a href="#relaunch">2026 Relaunch</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="eyebrow">Est. 2013 · Long Island, New York</div>
+
+        <h1>PRS<span>.</span></h1>
+
+        <h2>Power Rage Success</h2>
+
+        <p>
+          Built on friendship. Forged through competition.
+          Driven by a legacy that refuses to fade.
+          More than a decade in the making — PRS Gaming is back.
+        </p>
+
+        <a href="#story" class="button">Discover Our Story</a>
+        <a href="#relaunch" class="button button-outline">The Takeover</a>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="section-heading">
+        <div class="eyebrow">Who We Are</div>
+        <h2>More Than a Team.<br><span>A Legacy.</span></h2>
+      </div>
+
+      <p class="intro">
+        <strong>PRS Gaming (Power Rage Success)</strong> is an American
+        esports organization founded in 2013 in Long Island, New York.
+        What started as a sniper-only, quickscoping Call of Duty team
+        evolved into a worldwide amateur competitive organization,
+        representing North America and Europe and competing across
+        multiple eras of the Call of Duty scene.
+
+        <br><br>
+
+        From the early days of sniping to online tournaments,
+        international rosters, and championship runs, PRS has always
+        been about competition, brotherhood, and the drive to succeed.
+        In 2026, a new chapter begins.
+      </p>
+    </section>
+
+    <section class="stats" aria-label="PRS Gaming highlights">
+      <div class="stat">
+        <h3>2013</h3>
+        <p>Year Founded</p>
+      </div>
+
+      <div class="stat">
+        <h3>NA + EU</h3>
+        <p>International Competition</p>
+      </div>
+
+      <div class="stat">
+        <h3>2026</h3>
+        <p>The Relaunch</p>
+      </div>
+    </section>
+
+    <section class="section" id="story">
+      <div class="section-heading">
+        <div class="eyebrow">The Journey</div>
+        <h2>Our <span>Story</span></h2>
+      </div>
+
+      <div class="timeline">
+
+        <article class="timeline-item">
+          <div class="year">2013 · THE BEGINNING</div>
+          <h3>Three Friends. One Vision.</h3>
+          <p>
+            PRS began as Precision Gaming, founded in Long Island,
+            New York, by three real-life best friends: Blade, DUB11N,
+            and Kamz. United by their passion for gaming and YouTube,
+            they set out to build something of their own. When other
+            clans began using the Precision Gaming name, they kept
+            the initials and gave them a new meaning:
+            <strong>Power Rage Success.</strong>
+          </p>
+        </article>
+
+        <article class="timeline-item">
+          <div class="year">THE EARLY YEARS</div>
+          <h3>Built on the Sniper Scene</h3>
+          <p>
+            PRS made its name as a strictly sniper-only, quickscoping
+            Call of Duty team. The style helped establish the team's
+            identity and build its reputation across the East Coast.
+            PRS became known through its NJROD connections and the
+            tournaments it competed in.
+          </p>
+        </article>
+
+        <article class="timeline-item">
+          <div class="year">2015 · A NEW CHAPTER</div>
+          <h3>The Roster Evolves</h3>
+          <p>
+            As the original lineup changed, Night Stalker joined
+            Blade in 2015, marking another chapter in the organization's
+            development and setting the stage for its evolution beyond
+            the original sniping scene.
+          </p>
+        </article>
+
+        <article class="timeline-item">
+          <div class="year">COMPETITIVE GROWTH</div>
+          <h3>From Sniping to Championships</h3>
+          <p>
+            PRS expanded into online Call of Duty tournaments,
+            building a competitive presence through AGN, the NAL,
+            and Call of Duty Challengers competition. The organization
+            recorded numerous tournament victories, including three
+            consecutive AGN championships. In 2023, PRS acquired the
+            NAL following the league's business closure.
+          </p>
+        </article>
+
+        <article class="timeline-item">
+          <div class="year">THE INTERNATIONAL ERA</div>
+          <h3>A Worldwide Organization</h3>
+          <p>
+            At its peak, PRS fielded North American and European
+            rosters, bringing together players from Spain, Germany,
+            Mexico, England, Russia, Canada, and beyond. The team
+            competed in the broader Call of Duty competitive ecosystem
+            alongside established organizations such as FaZe, OpTic,
+            and G2.
+          </p>
+        </article>
+
+        <article class="timeline-item">
+          <div class="year">2022–2025 · THE LEGACY</div>
+          <h3>Players Who Moved Forward</h3>
+          <p>
+            PRS was part of the journeys of players who continued
+            building their competitive careers. RenKoR represented
+            PRS Gaming EU in 2023 before earning CDL 2025 Rookie
+            of the Year honors. Lunarz played on PRS's North American
+            roster during 2022–2023.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section" id="legacy">
+      <div class="section-heading">
+        <div class="eyebrow">What We Stand For</div>
+        <h2>The PRS <span>Legacy</span></h2>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Power</h3>
+          <p>
+            The ambition to build, compete, and push beyond expectations.
+            Every era of PRS starts with the belief that there is always
+            another level to reach.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Rage</h3>
+          <p>
+            The competitive fire that started with quickscoping and
+            carried into tournament play. The hunger to compete is
+            part of our identity.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Success</h3>
+          <p>
+            The result of commitment, teamwork, and persistence.
+            From championship runs to international rosters, success
+            has always been the goal.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Brotherhood</h3>
+          <p>
+            PRS was built by friends who shared a vision. That foundation
+            remains at the heart of the organization as we begin our
+            next chapter.
+          </p>
+        </article>
+      </div>
+
+      <p class="intro" style="margin-top: 35px;">
+        The organization also reached audiences beyond esports.
+        UFC champion Cris Cyborg publicly interacted with PRS-related
+        social media content, while former member PRS PRIME received
+        VIP access to a Milwaukee Brewers game through his association
+        with the team.
+      </p>
+    </section>
+
+    <section class="relaunch" id="relaunch">
+      <div class="eyebrow">The Next Chapter Starts Now</div>
+
+      <h2>We're <span>Back.</span></h2>
+
+      <p>
+        More than a decade of history. Countless memories.
+        A legacy built through competition.
+
+        <br><br>
+
+        In 2026, PRS Gaming returns for a new chapter.
+        We're ready to see where this journey takes us.
+        The mission continues, the name lives on, and the next
+        era is ours to create.
+      </p>
+
+      <a href="#home" class="button">Welcome to the Takeover</a>
+
+      <div class="slogan">
+        POWER <span>|</span> RAGE <span>|</span> SUCCESS
+      </div>
+
+      <div class="slogan" style="color: var(--red);">
+        #PRSTAKEOVER
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>PRS GAMING</strong> · POWER RAGE SUCCESS
+    <span class="hashtag">#PRSTAKEOVER</span>
+    <p style="margin-top: 15px;">
+      © 2026 PRS Gaming. All rights reserved.
+    </p>
+  </footer>
+
+</body>
+</html>

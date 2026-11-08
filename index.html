@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="PRS Gaming — Power Rage Success. #PRSTAKEOVER">
+<title>PRS Gaming | #PRSTAKEOVER</title>
+<style>
+/* PRS GAMING — EDITABLE WEBSITE
+   Search for "EDIT THIS" to find text, player details and URLs to change. */
+:root{--blue:#064dff;--electric:#176bff;--white:#f5f7fc;--black:#03050a;--muted:#aab5c9;--max:1320px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:#02040a;color:var(--white);font-family:Arial,Helvetica,sans-serif;line-height:1.5}
+a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),92%);margin:auto}
+.site-header{height:82px;position:sticky;top:0;z-index:20;background:rgba(2,4,10,.96);border-bottom:2px solid var(--blue);box-shadow:0 5px 25px #001c66}
+.nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:1000;letter-spacing:2px}
+.logo-mark{width:48px;height:56px;display:grid;place-items:center;font-size:32px;font-weight:1000;font-style:italic;color:#071022;background:linear-gradient(145deg,#fff 0 52%,#0757ff 53%);clip-path:polygon(0 0,100% 0,100% 70%,50% 100%,0 70%)}
+.logo-name{font-size:1.05rem}.logo-name span{color:#2877ff}
+nav{display:flex;align-items:center;flex-wrap:wrap}
+nav a{font-size:.82rem;font-weight:900;letter-spacing:1.4px;padding:10px 26px;border-right:1px solid #536078;transition:.2s}
+nav a:last-child{border:0}nav a:hover,nav a.active{color:#2477ff}
+.hero{position:relative;isolation:isolate;overflow:hidden;min-height:510px;border-bottom:2px solid var(--blue);
+background:radial-gradient(ellipse at 77% 48%,rgba(0,78,255,.42),transparent 35%),radial-gradient(ellipse at 15% 40%,rgba(0,52,190,.3),transparent 45%),linear-gradient(110deg,#03050b 10%,#07152e 55%,#02040a)}
+.hero:before{content:"";position:absolute;inset:-30%;z-index:-1;opacity:.65;background:repeating-linear-gradient(128deg,transparent 0 76px,rgba(10,82,255,.04) 77px,rgba(25,100,255,.48) 79px,transparent 83px,transparent 150px);transform:rotate(-5deg)}
+.hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(0,0,0,.35),transparent 70%),linear-gradient(0deg,rgba(0,0,0,.45),transparent 35%)}
+.hero-inner{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:30px;padding:76px 0}
+.welcome{font-size:1rem;letter-spacing:9px;font-weight:900;color:#e6eaf2}
+h1{font-size:clamp(3.6rem,8vw,7.7rem);line-height:.88;letter-spacing:-5px;font-style:italic;font-weight:1000;margin:17px 0;text-shadow:4px 5px 0 #101b34,0 0 35px #064dff;text-transform:uppercase}
+.brush{height:8px;width:min(520px,95%);background:#f5f7fc;transform:skewX(-28deg);box-shadow:0 0 15px #fff;margin:22px 0 8px}
+.hash{font-size:clamp(2rem,4vw,3.3rem);font-weight:1000;font-style:italic;color:#075dff}
+.cta{display:inline-block;margin-top:25px;padding:13px 30px;border:2px solid #075dff;background:rgba(0,15,55,.7);box-shadow:0 0 22px #064dff77;font-weight:900;letter-spacing:1.5px;transform:skewX(-12deg);transition:.2s}
+.cta span{display:block;transform:skewX(12deg)}.cta:hover{background:#075dff;transform:skewX(-12deg) translateY(-3px)}
+.hero-symbol{display:grid;place-items:center;min-height:330px}
+.symbol{font-size:clamp(9rem,22vw,16rem);font-weight:1000;font-style:italic;line-height:1;color:#f3f5fb;-webkit-text-stroke:2px #b9c9ed;text-shadow:13px 13px 0 #064dff,0 0 45px #075dff;transform:skewY(-8deg)}
+.roster{padding:30px 0 76px;background:radial-gradient(ellipse at 50% 0,rgba(0,50,180,.17),transparent 55%),#03050a}
+.section-title{text-align:center;margin-bottom:30px}
+.kicker{color:#176bff;letter-spacing:4px;font-weight:1000;font-size:.95rem}
+h2{font-size:clamp(2.5rem,5vw,3.8rem);line-height:1;margin:4px 0;font-weight:1000;font-style:italic}
+.sub{color:var(--muted);margin:10px 0 0}
+.players{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.player{position:relative;min-height:175px;display:grid;grid-template-columns:112px 1fr;gap:16px;align-items:center;padding:16px 20px;background:linear-gradient(120deg,rgba(3,9,22,.97),rgba(5,10,20,.9));border:2px solid #075dff;clip-path:polygon(0 0,94% 0,100% 18%,100% 100%,6% 100%,0 83%);box-shadow:inset 0 0 25px #064dff22}
+.player:before{content:"";position:absolute;left:0;top:0;width:5px;height:100%;background:#075dff}
+.avatar{height:135px;width:105px;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 35%,#123b87,#030713 70%);border:1px solid #176bff88;color:#fff8;font-size:2.7rem;font-weight:1000}
+.number{color:#176bff;font-size:1.15rem;font-weight:1000}.role{color:#aab5c9;font-size:.78rem;letter-spacing:1px;text-transform:uppercase}
+.player-name{font-size:1.35rem;font-weight:1000;font-style:italic;text-transform:uppercase;margin-top:5px}
+.underline{height:4px;width:70px;background:#075dff;transform:skewX(-25deg);margin-top:8px}
+.extra{padding:65px 0;background:#080d18;border-top:1px solid #075dff55}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{padding:24px;border:1px solid #075dff88;background:linear-gradient(145deg,#0a1934,#03060d)}
+.card h3{margin:0 0 8px;text-transform:uppercase}.card p{margin:0;color:var(--muted)}
+.join{text-align:center;padding:75px 0;background:radial-gradient(ellipse at center,#0639a844,transparent 65%)}
+.join p{max-width:650px;margin:15px auto 20px;color:var(--muted)}
+footer{background:#02040a;border-top:1px solid #075dff88;padding:24px 0;color:var(--muted)}
+.foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
+.social{display:flex;gap:17px;flex-wrap:wrap}.social a{font-size:.84rem;color:#5b9cff;font-weight:900}.social a:hover{color:white}
+@media(max-width:850px){.site-header{height:auto}.nav{padding:12px 0;flex-direction:column;gap:8px}nav{justify-content:center}nav a{padding:8px 12px;font-size:.72rem}.hero-inner{grid-template-columns:1fr;text-align:center;padding:55px 0}.welcome{letter-spacing:5px}.brush{margin:20px auto 8px}.hero-symbol{min-height:160px}.symbol{font-size:9rem}.players,.cards{grid-template-columns:1fr}.player{max-width:520px;width:100%;margin:auto}}
+@media(max-width:430px){h1{letter-spacing:-3px}.player{grid-template-columns:85px 1fr;gap:12px;padding:12px}.avatar{width:82px;height:115px}.player-name{font-size:1.1rem}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="logo" href="#home"><span class="logo-mark">P</span><span class="logo-name">PRS <span>GAMING</span></span></a>
+    <!-- EDIT THIS: Change navigation text and href links. -->
+    <nav>
+      <a class="active" href="#home">HOME</a>
+      <a href="#roster">ROSTER</a>
+      <a href="#competitive">COMPETITIVE</a>
+      <a href="#news">NEWS</a>
+      <a href="#join">JOIN US</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero" id="home">
+    <div class="wrap hero-inner">
+      <div>
+        <!-- EDIT THIS: Main homepage wording. -->
+        <div class="welcome">WELCOME TO</div>
+        <h1>PRS GAMING</h1>
+        <div class="brush"></div>
+        <div class="hash">#PRSTAKEOVER</div>
+        <!-- EDIT THIS: Replace #roster with any destination URL. -->
+        <a class="cta" href="#roster"><span>MEET THE TEAM&nbsp; →</span></a>
+      </div>
+      <div class="hero-symbol" aria-label="PRS emblem"><div class="symbol">P</div></div>
+    </div>
+  </section>
+
+  <section class="roster" id="roster">
+    <div class="wrap">
+      <div class="section-title"><div class="kicker">THE ROSTER</div><h2>OUR PLAYERS</h2><p class="sub">Meet the players representing PRS Gaming.</p></div>
+      <div class="players">
+        <!-- EDIT THIS: Change player names, numbers, roles. Duplicate a whole article to add players. -->
+        <article class="player"><div class="avatar">01</div><div><div class="number">01</div><div class="role">TEAM CAPTAIN</div><div class="player-name">PLAYER NAME</div><div class="underline"></div></div></article>
+        <article class="player"><div class="avatar">02</div><div><div class="number">02</div><div class="role">COMPETITOR</div><div class="player-name">PLAYER NAME</div><div class="underline"></div></div></article>
+        <article class="player"><div class="avatar">03</div><div><div class="number">03</div><div class="role">COMPETITOR</div><div class="player-name">PLAYER NAME</div><div class="underline"></div></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="extra" id="competitive">
+    <div class="wrap">
+      <div class="section-title"><div class="kicker">THE GRIND</div><h2>COMPETITIVE</h2><p class="sub">Our games, teams, and tournament action.</p></div>
+      <!-- EDIT THIS: Change the game titles, descriptions, and add links if needed. -->
+      <div class="cards">
+        <article class="card"><h3>CALL OF DUTY</h3><p>Add your roster, league, match schedule, and tournament results.</p></article>
+        <article class="card"><h3>ROCKET LEAGUE</h3><p>Add your Rocket League roster, events, and competitive updates.</p></article>
+        <article class="card"><h3>MORE DIVISIONS</h3><p>Change this card to any game or division PRS supports.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="roster" id="news">
+    <div class="wrap">
+      <div class="section-title"><div class="kicker">LATEST UPDATES</div><h2>PRS NEWS</h2></div>
+      <!-- EDIT THIS: Replace sample news with announcements and real links. -->
+      <div class="cards">
+        <article class="card"><h3>TEAM ANNOUNCEMENTS</h3><p>Share new member announcements and roster changes.</p></article>
+        <article class="card"><h3>TOURNAMENT NEWS</h3><p>Post upcoming events, match days, and results.</p></article>
+        <article class="card"><h3>COMMUNITY UPDATES</h3><p>Keep your players and supporters in the loop.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="join" id="join">
+    <div class="wrap">
+      <div class="kicker">BECOME PART OF THE TAKEOVER</div><h2>JOIN PRS GAMING</h2>
+      <p>We are looking for competitive players, streamers, and content creators. Connect with us and become part of the team.</p>
+      <!-- EDIT THIS: Put your real Discord invite and contact link here. -->
+      <a class="cta" href="https://discord.com/" target="_blank" rel="noopener"><span>JOIN OUR DISCORD&nbsp; →</span></a>
+      <a class="cta" href="mailto:YOUR-EMAIL@example.com"><span>CONTACT US&nbsp; →</span></a>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap foot">
+  <strong>PRS GAMING · #PRSTAKEOVER</strong>
+  <!-- EDIT THIS: Replace each # with your actual social profile URL. -->
+  <div class="social">
+    <a href="#" target="_blank" rel="noopener">DISCORD</a>
+    <a href="#" target="_blank" rel="noopener">YOUTUBE</a>
+    <a href="#" target="_blank" rel="noopener">TWITCH</a>
+    <a href="#" target="_blank" rel="noopener">TIKTOK</a>
+    <a href="#" target="_blank" rel="noopener">X</a>
+  </div>
+  <span>© <span id="year"></span> PRS Gaming</span>
+</div></footer>
+<script>document.getElementById("year").textContent=new Date().getFullYear();</script>
+</body>
+</html>

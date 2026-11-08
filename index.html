@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PRS Gaming — Power Rage Success. #PRSTAKEOVER">
+  <title>PRS Gaming | #PRSTAKEOVER</title>
+  <style>
+    /* =========================================================
+       PRS GAMING WEBSITE
+       QUICK EDIT: Search for "EDIT:" to find text and link settings.
+       Colors are controlled by the variables below.
+       ========================================================= */
+    :root {
+      --blue: #075dff;
+      --electric: #247bff;
+      --white: #f4f6fb;
+      --black: #03050b;
+      --muted: #aeb8cc;
+      --panel: rgba(3, 8, 20, .88);
+      --line: rgba(30, 105, 255, .8);
+      --max-width: 1320px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--black); color: var(--white);
+      font-family: Arial, Helvetica, sans-serif; line-height: 1.5;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(var(--max-width), 92%); margin: 0 auto; }
+    .site-header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(2, 4, 10, .94); border-bottom: 2px solid var(--blue);
+      box-shadow: 0 5px 28px rgba(0, 72, 255, .18);
+      backdrop-filter: blur(12px);
+    }
+    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 1000; letter-spacing: 2px; }
+    .brand-mark {
+      width: 48px; height: 48px; display: grid; place-items: center;
+      font-size: 25px; font-style: italic; font-weight: 1000;
+      background: linear-gradient(145deg, #fff 0 48%, #075dff 49% 100%);
+      color: #050914; clip-path: polygon(0 0,100% 0,100% 72%,50% 100%,0 72%);
+    }
+    .brand-name { font-size: 1.05rem; }
+    .brand-name span { color: var(--electric); }
+    .nav-links { display: flex; align-items: center; flex-wrap: wrap; gap: 0; }
+    .nav-links a {
+      padding: 10px 25px; font-size: .83rem; font-weight: 900;
+      letter-spacing: 1.5px; border-right: 1px solid rgba(255,255,255,.3);
+      transition: color .2s;
+    }
+    .nav-links a:last-child { border: 0; }
+    .nav-links a:hover, .nav-links a.active { color: var(--electric); }
+
+    .hero {
+      min-height: 560px; display: flex; align-items: center; position: relative;
+      overflow: hidden; isolation: isolate;
+      background:
+        radial-gradient(ellipse at 78% 48%, rgba(0,75,255,.34), transparent 35%),
+        radial-gradient(ellipse at 20% 20%, rgba(0,45,180,.25), transparent 45%),
+        linear-gradient(115deg, #03050b 0%, #071329 52%, #02040a 100%);
+      border-bottom: 2px solid var(--blue);
+    }
+    /* Blue streaks and energy accents are CSS, so no extra image files are needed. */
+    .hero::before {
+      content: ""; position: absolute; inset: -40%; z-index: -1; opacity: .65;
+      background: repeating-linear-gradient(128deg, transparent 0 95px,
+        rgba(0,90,255,.0) 96px, rgba(0,90,255,.0) 105px,
+        rgba(20,100,255,.28) 106px, transparent 109px, transparent 180px);
+      transform: rotate(-4deg);
+    }
+    .hero::after {
+      content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+      background: linear-gradient(90deg, rgba(0,0,0,.35), transparent 65%),
+        radial-gradient(ellipse at 80% 50%, transparent 0 20%, rgba(0,0,0,.22) 65%);
+    }
+    .hero-inner { display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 30px; padding: 80px 0 95px; }
+    .welcome { font-size: .95rem; letter-spacing: 9px; font-weight: 900; color: #d9e1f1; }
+    h1 {
+      margin: 12px 0 0; font-size: clamp(3.4rem, 8vw, 7.3rem);
+      line-height: .9; letter-spacing: -5px; font-weight: 1000;
+      font-style: italic; text-transform: uppercase;
+      text-shadow: 4px 5px 0 #101b33, 0 0 35px rgba(0,89,255,.4);
+    }
+    h1 span { display: block; color: var(--white); }
+    .brush-line { width: min(510px, 95%); height: 8px; margin: 20px 0 6px; background: var(--blue); transform: skewX(-28deg); box-shadow: 0 0 18px var(--blue); }
+    .hashtag { color: var(--blue); font-size: clamp(1.8rem, 4vw, 3.1rem); font-weight: 1000; font-style: italic; letter-spacing: -1px; }
+    .hero-actions { margin-top: 30px; }
+    .button {
+      display: inline-flex; align-items: center; gap: 18px; padding: 13px 27px;
+      border: 2px solid var(--blue); background: rgba(0,20,65,.45);
+      box-shadow: 0 0 18px rgba(0,80,255,.32); font-weight: 900;
+      letter-spacing: 1.5px; transform: skewX(-12deg); transition: .2s;
+    }
+    .button span { transform: skewX(12deg); }
+    .button:hover { background: var(--blue); transform: skewX(-12deg) translateY(-3px); }
+    .hero-emblem { display: flex; justify-content: center; align-items: center; min-height: 330px; }
+    .emblem {
+      width: min(320px, 75vw); aspect-ratio: 1; display: grid; place-items: center;
+      font-size: clamp(8rem, 20vw, 15rem); line-height: 1; font-weight: 1000;
+      font-style: italic; letter-spacing: -18px; padding-right: 18px;
+      color: #f4f6fb; -webkit-text-stroke: 2px #b9c7e4;
+      text-shadow: 12px 12px 0 #064cff, 0 0 40px #075dff;
+      transform: skewY(-7deg);
+    }
+
+    section { padding: 68px 0 82px; }
+    .roster-section {
+      background: radial-gradient(ellipse at 50% 0, rgba(0,55,180,.17), transparent 48%), #03050b;
+    }
+    .section-title { text-align: center; margin-bottom: 30px; }
+    .section-kicker { color: var(--blue); letter-spacing: 4px; font-size: .95rem; font-weight: 1000; }
+    h2 { margin: 3px 0 0; font-size: clamp(2.4rem, 5vw, 3.8rem); line-height: 1; font-style: italic; text-transform: uppercase; }
+    .section-subtitle { color: var(--muted); margin: 12px 0 0; }
+    .roster-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .player-card {
+      min-height: 190px; display: grid; grid-template-columns: 110px 1fr; align-items: center; gap: 16px;
+      padding: 18px; position: relative; overflow: hidden;
+      background: linear-gradient(120deg, rgba(3,10,25,.97), rgba(5,10,20,.9));
+      border: 2px solid #075dff; clip-path: polygon(0 0, 94% 0, 100% 17%, 100% 100%, 6% 100%, 0 83%);
+      box-shadow: inset 0 0 25px rgba(0,75,255,.12);
+    }
+    .player-card::before { content: ""; position: absolute; width: 5px; height: 100%; left: 0; top: 0; background: var(--blue); }
+    .player-photo {
+      width: 105px; height: 140px; display: grid; place-items: center; overflow: hidden;
+      background: radial-gradient(ellipse at 50% 35%, #123a83, #030713 70%);
+      color: rgba(255,255,255,.28); font-size: 3.5rem; font-weight: 900;
+      border: 1px solid rgba(35,110,255,.5);
+    }
+    .player-number { color: var(--blue); font-size: 1.1rem; font-weight: 1000; }
+    .player-role { color: #aeb8cc; font-size: .78rem; text-transform: uppercase; letter-spacing: 1px; }
+    .player-name { margin-top: 5px; font-size: 1.35rem; font-weight: 1000; font-style: italic; text-transform: uppercase; }
+    .player-line { width: 70px; height: 4px; margin-top: 9px; background: var(--blue); transform: skewX(-25deg); }
+    .more-section { background: #080d18; border-top: 1px solid rgba(0,90,255,.3); }
+    .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .feature {
+      padding: 25px; border: 1px solid rgba(0,90,255,.55);
+      background: linear-gradient(145deg, rgba(7,22,48,.8), rgba(2,5,12,.9));
+    }
+    .feature h3 { margin: 0 0 8px; text-transform: uppercase; }
+    .feature p { margin: 0; color: var(--muted); }
+    .join-section { text-align: center; background: radial-gradient(ellipse at center, rgba(0,65,220,.22), transparent 65%); }
+    .join-section p { max-width: 650px; margin: 16px auto 25px; color: var(--muted); }
+    footer { padding: 25px 0; border-top: 1px solid rgba(0,90,255,.5); background: #02040a; color: var(--muted); }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+    .social-links { display: flex; flex-wrap: wrap; gap: 17px; }
+    .social-links a { color: #5b9cff; font-weight: 900; font-size: .85rem; }
+    .social-links a:hover { color: white; }
+    @media (max-width: 850px) {
+      .nav { flex-direction: column; padding: 12px 0; gap: 8px; }
+      .nav-links { justify-content: center; }
+      .nav-links a { padding: 8px 12px; font-size: .72rem; }
+      .hero-inner { grid-template-columns: 1fr; text-align: center; padding: 65px 0; }
+      .welcome { letter-spacing: 5px; }
+      .brush-line { margin-left: auto; margin-right: auto; }
+      .hero-emblem { min-height: 170px; }
+      .emblem { font-size: 9rem; }
+      .roster-grid, .feature-grid { grid-template-columns: 1fr; }
+      .player-card { max-width: 520px; width: 100%; margin: auto; }
+    }
+    @media (max-width: 430px) {
+      h1 { letter-spacing: -3px; }
+      .player-card { grid-template-columns: 85px 1fr; gap: 12px; padding: 12px; }
+      .player-photo { width: 82px; height: 118px; }
+      .player-name { font-size: 1.12rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- EDIT: Change the navigation labels or href destinations here. Use #section-id for sections on this page, or paste a full URL. -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="PRS Gaming home">
+        <span class="brand-mark">P</span>
+        <span class="brand-name">PRS <span>GAMING</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a class="active" href="#home">HOME</a>
+        <a href="#roster">ROSTER</a>
+        <a href="#competitive">COMPETITIVE</a>
+        <a href="#news">NEWS</a>
+        <a href="#join">JOIN US</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- EDIT: Main welcome headline and button. -->
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+        <div>
+          <div class="welcome">WELCOME TO</div>
+          <h1><span>PRS GAMING</span></h1>
+          <div class="brush-line"></div>
+          <div class="hashtag">#PRSTAKEOVER</div>
+          <div class="hero-actions">
+            <a class="button" href="#roster"><span>MEET THE TEAM&nbsp; →</span></a>
+          </div>
+        </div>
+        <div class="hero-emblem" aria-label="PRS emblem">
+          <div class="emblem">P</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDIT: Add, remove, or duplicate player-card blocks to update your roster. -->
+    <section class="roster-section" id="roster">
+      <div class="container">
+        <div class="section-title">
+          <div class="section-kicker">THE ROSTER</div>
+          <h2>OUR PLAYERS</h2>
+          <p class="section-subtitle">Meet the people representing PRS Gaming.</p>
+        </div>
+        <div class="roster-grid">
+          <article class="player-card">
+            <div class="player-photo">01</div>
+            <div><div class="player-number">01</div><div class="player-role">TEAM CAPTAIN</div><div class="player-name">PLAYER NAME</div><div class="player-line"></div></div>
+          </article>
+          <article class="player-card">
+            <div class="player-photo">02</div>
+            <div><div class="player-number">02</div><div class="player-role">COMPETITOR</div><div class="player-name">PLAYER NAME</div><div class="player-line"></div></div>
+          </article>
+          <article class="player-card">
+            <div class="player-photo">03</div>
+            <div><div class="player-number">03</div><div class="player-role">COMPETITOR</div><div class="player-name">PLAYER NAME</div><div class="player-line"></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDIT: Add your games, leagues, tournament results, and competitive links. -->
+    <section class="more-section" id="competitive">
+      <div class="container">
+        <div class="section-title">
+          <div class="section-kicker">THE GRIND</div>
+          <h2>COMPETITIVE</h2>
+          <p class="section-subtitle">PRS Gaming across the competitive scene.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature"><h3>Call of Duty</h3><p>Add your roster, league, tournament results, or match schedule here.</p></article>
+          <article class="feature"><h3>Rocket League</h3><p>Add your Rocket League team, results, and competitive information here.</p></article>
+          <article class="feature"><h3>More Divisions</h3><p>Change this card to any game or division your organization supports.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDIT: Replace the sample news cards with announcements and real links. -->
+    <section class="roster-section" id="news">
+      <div class="container">
+        <div class="section-title">
+          <div class="section-kicker">LATEST UPDATES</div>
+          <h2>PRS NEWS</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature"><h3>Team Announcement</h3><p>Put your latest PRS Gaming announcement here.</p></article>
+          <article class="feature"><h3>Tournament News</h3><p>Share upcoming events, match days, and tournament results.</p></article>
+          <article class="feature"><h3>Community Update</h3><p>Keep your players and supporters up to date.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDIT: Replace # with your Discord invite and application/contact links. -->
+    <section class="join-section" id="join">
+      <div class="container">
+        <div class="section-kicker">BECOME PART OF THE TAKEOVER</div>
+        <h2>JOIN PRS GAMING</h2>
+        <p>We are looking for competitive players, streamers, and content creators. Want to be part of the organization? Connect with us below.</p>
+        <div class="hero-actions">
+          <a class="button" href="https://discord.com/" target="_blank" rel="noopener"><span>JOIN OUR DISCORD&nbsp; →</span></a>
+          <a class="button" href="mailto:YOUR-EMAIL@example.com"><span>CONTACT US&nbsp; →</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <strong>PRS GAMING · #PRSTAKEOVER</strong>
+      <!-- EDIT: Replace each # with your actual social profile URL. -->
+      <div class="social-links">
+        <a href="#" target="_blank" rel="noopener">DISCORD</a>
+        <a href="#" target="_blank" rel="noopener">YOUTUBE</a>
+        <a href="#" target="_blank" rel="noopener">TWITCH</a>
+        <a href="#" target="_blank" rel="noopener">TIKTOK</a>
+        <a href="#" target="_blank" rel="noopener">X</a>
+      </div>
+      <span>© <span id="year"></span> PRS Gaming</span>
+    </div>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
